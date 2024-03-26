@@ -14,6 +14,7 @@ import { CoffeeListingService } from './coffee-listing.service';
   styleUrl: './coffee-listing.component.scss'
 })
 export class CoffeeListingComponent implements OnInit {
+  showAll: boolean = true;
   coffeeListing: CoffeeListing[] = [];
 
   constructor(private coffeeListingService: CoffeeListingService) { }
@@ -29,5 +30,17 @@ export class CoffeeListingComponent implements OnInit {
         console.log(error.message);
       }
     });
+  }
+
+  onClickShowAllProduct() {
+    this.showAll = true;
+    this.getCoffeeListing();
+  }
+
+  onClickShowAvailable() {
+    this.showAll = false;
+    if(!this.showAll) {
+      this.coffeeListing = this.coffeeListing.filter((item) => item.available === true);
+    } 
   }
 }
