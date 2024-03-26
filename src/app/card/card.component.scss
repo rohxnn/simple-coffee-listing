@@ -1,7 +1,7 @@
 .card-deck {
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3,1fr);
   grid-gap: 10px;
 }
 
@@ -9,6 +9,20 @@
   background-color: #1B1D1F;
   color: #FEF7EE;
   border: none;
+  flex: 1 0 auto;
+}
+
+.card-body {
+  flex: 1 1 auto;
+}
+  
+.popular {
+  position: absolute;
+  top: 5px;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #F6C768;
+  color: black; 
 }
 
 .price {
