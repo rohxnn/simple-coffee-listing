@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 //model
 import { CoffeeListing } from '../coffee-listing/coffee-listing.model';
 
-
 @Component({
   selector: 'app-card',
   standalone: true,
