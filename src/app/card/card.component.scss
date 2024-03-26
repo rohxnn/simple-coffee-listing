@@ -1,0 +1,28 @@
+.card-deck {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-gap: 10px;
+}
+
+.card {
+  background-color: #1B1D1F;
+  color: #FEF7EE;
+}
+
+.price {
+  background-color: #BEE3CC;
+  border-radius: 5px;
+  color: black;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 12px;
+}
+.votes-color {
+color: #6F757C;
+}
+
+@media (max-width: 768px) {
+  .card-deck {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  }
+}
