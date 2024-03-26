@@ -21,7 +21,9 @@
 .votes-color {
 color: #6F757C;
 }
-
+.text-sold {
+  color: #ED735D;
+}
 @media (max-width: 768px) {
   .card-deck {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
