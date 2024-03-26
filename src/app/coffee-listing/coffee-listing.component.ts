@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 //component
 import { CardComponent } from '../card/card.component';
+//model
+import { CoffeeListing } from './coffee-listing.model';
+//service
+import { CoffeeListingService } from './coffee-listing.service';
 
 @Component({
   selector: 'app-coffee-listing',
@@ -9,6 +13,21 @@ import { CardComponent } from '../card/card.component';
   templateUrl: './coffee-listing.component.html',
   styleUrl: './coffee-listing.component.scss'
 })
-export class CoffeeListingComponent {
+export class CoffeeListingComponent implements OnInit {
+  coffeeListing: CoffeeListing[] = [];
 
+  constructor(private coffeeListingService: CoffeeListingService) { }
+  ngOnInit(): void {
+    this.getCoffeeListing();
+  }
+
+  getCoffeeListing() {
+    this.coffeeListingService.getCoffeeListing().subscribe({
+      next: (response: CoffeeListing[]) => {
+        this.coffeeListing = response;
+      }, error: (error) => {
+        console.log(error.message);
+      }
+    });
+  }
 }
